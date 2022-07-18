@@ -7,16 +7,29 @@
 
 class Circulo : public QPoint
 {
+private:
+    int posX;
+    int posY;
+    int tam;
+
 public:
     Circulo();
     Circulo(int xpos, int ypos);
-    int xpos(int x);
-    int ypos(int y);
 
-    int getArriba(int valor);
-    int getAbajo(int valor);
-    int getIzq(int valor);
-    int getDer(int valor);
+    void subir();
+    void bajar();
+    void izquierda();
+    void derecha();
+
+    int getPosX() const;
+    void setPosX(int value);
+
+    int getPosY() const;
+    void setPosY(int value);
+
+    int getTam() const;
+    void setTam(int value);
+
 };
 
 #endif // CIRCULO_H

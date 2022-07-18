@@ -49,3 +49,10 @@ int Configuracion::dimension() const
     return m_dimension;
 }
 
+
+void Configuracion::on_inDimension_valueChanged(int value)
+{
+    int x;
+    x=ui->inDimension->value();
+    qDebug()<< x;
+}

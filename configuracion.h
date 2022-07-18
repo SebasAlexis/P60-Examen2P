@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QColorDialog>
+#include <QDebug>
 
 namespace Ui {
 class Configuracion;
@@ -25,12 +26,17 @@ public:
 private slots:
     void on_btnColor_released();
 
+    void on_inDimension_actionTriggered(int action);
+
+    void on_inDimension_valueChanged(int value);
+
 private:
     Ui::Configuracion *ui;
     QColor m_color;
     int m_dimension;
 
     void setWidgetColor();
+
 };
 
 #endif // CONFIGURACION_H

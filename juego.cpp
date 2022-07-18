@@ -11,6 +11,11 @@ Juego::Juego(QWidget *parent)
     m_circulo->setX(centro.x());
     m_circulo->setY(centro.y());
 
+    lienzo=QPixmap(500,500);
+    this->dibujar();
+
+    ui->marco->setPixmap(lienzo);
+
 }
 
 Juego::~Juego()
@@ -18,29 +23,39 @@ Juego::~Juego()
     delete ui;
 }
 
+void Juego::paintEvent(QPaintEvent *event)
+{
+    ui->marco->setPixmap(lienzo);
+    event->accept();
+}
+
 
 void Juego::on_btnArriba_released()
 {
-    int x=0;
-    m_circulo->setX(x+10);
+//    m_circulo->setPosY(m_circulo->getPosY()-5);
+    m_circulo->subir();
+    dibujar();
 }
 
 
 void Juego::on_btnAbajo_released()
 {
-
+    m_circulo->bajar();
+    dibujar();
 }
 
 
 void Juego::on_btnIzqueirda_released()
 {
-
+    m_circulo->izquierda();
+    dibujar();
 }
 
 
 void Juego::on_btnDerecha_released()
 {
-
+    m_circulo->derecha();
+    dibujar();
 }
 
 
@@ -58,5 +73,17 @@ void Juego::on_actionConfigraci0n_triggered()
 void Juego::on_actionSalir_triggered()
 {
     this->close();
+}
+
+void Juego::dibujar()
+{
+    lienzo.fill(Qt::white);
+    QPainter painter(&lienzo);
+    QPen pincel;
+    pincel.setColor(Qt::black);
+    pincel.setWidth(5);
+
+    painter.setPen(pincel);
+    painter.drawEllipse(m_circulo->getPosX(),m_circulo->getPosY()+10,100,100);
 }
 
