@@ -31,8 +31,12 @@ private slots:
 
     void on_actionSalir_triggered();
 
+    void on_btnArriba_clicked();
+
 private:
     Ui::Juego *ui;
     Circulo *m_circulo;
+    QPen pincel;
+    QPainter painter;
 };
 #endif // JUEGO_H

@@ -10,6 +10,7 @@ Juego::Juego(QWidget *parent)
     m_circulo = new Circulo();
     m_circulo->setX(centro.x());
     m_circulo->setY(centro.y());
+
 }
 
 Juego::~Juego()
@@ -20,7 +21,8 @@ Juego::~Juego()
 
 void Juego::on_btnArriba_released()
 {
-
+    int x=0;
+    m_circulo->setX(x+10);
 }
 
 

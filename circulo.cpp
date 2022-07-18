@@ -11,3 +11,23 @@ Circulo::Circulo(int xpos, int ypos)
 {
 
 }
+
+int Circulo::getArriba(int valor)
+{
+
+}
+
+int Circulo::getAbajo(int valor)
+{
+
+}
+
+int Circulo::getIzq(int valor)
+{
+
+}
+
+int Circulo::getDer(int valor)
+{
+
+}
